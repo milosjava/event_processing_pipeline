@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "event_processing_pipeline"
+version = "0.1.0"
+description = "A Take-Home Programming Exercise"
+authors = ["Milos Grubjesic <milos.g@toptal.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+Flask = "^2.0.3"
+pandas = "^1.4.1"
+
+[tool.poetry.dev-dependencies]
+requests = "^2.27.1"
+coverage = "^6.3.2"
+Faker = "^13.3.1"
+Flask-Testing = "^0.8.1"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

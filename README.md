@@ -1,2 +1,2 @@
-# event_processing_pipeline
+# Event Processing Pipeline
 A Take-Home Programming Exercise
