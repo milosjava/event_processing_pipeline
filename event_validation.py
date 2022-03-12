@@ -1,8 +1,12 @@
 import pandas as pd
-from datetime import datetime
 
 
 def _time_delta_to_HH_MM(timedelta) -> str:
+    """
+
+    :param timedelta:
+    :return: string representation in HH:mm format of time delta , e.g. 10:05
+    """
     seconds = timedelta.seconds
 
     hours = seconds // 3600
@@ -14,10 +18,17 @@ def _time_delta_to_HH_MM(timedelta) -> str:
     return str(hours) + ":" + str(minutes)
 
 
-def validate():
+def validate(serving_events_filepath: str = "output/serving_events.csv",
+             user_events_filepath: str = "output/user_events.csv") -> pd.DataFrame:
+    """
+
+    :param serving_events_filepath: location for serving events csv file
+    :param user_events_filepath:  location for user events csv file
+    :return: cleaned and deduplicated merged file by following rules as described inside code
+    """
     # load generated files
-    se_df = pd.read_csv("output/serving_events.csv")
-    ue_df = pd.read_csv("output/user_events.csv")
+    se_df = pd.read_csv(serving_events_filepath)
+    ue_df = pd.read_csv(user_events_filepath)
 
     # Validated user events have the following conditions met:
     #   a. parentEventId matches an eventId in the server events.
@@ -59,8 +70,9 @@ def validate():
     combined_df.columns = ["eventId", "eventTimestamp", "eventType", "parentEventId", "userId", "advertiserId",
                            "deviceId", "price"]
 
-    combined_df.to_csv("output/validated_events.csv", index=False)
+    return combined_df
 
 
 if __name__ == '__main__':
-    validate()
+    combined_df = validate()
+    combined_df.to_csv("output/validated_events.csv", index=False)

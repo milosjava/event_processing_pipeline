@@ -7,10 +7,22 @@ app = Flask(__name__)
 
 # check if both fields are populated
 def is_valid_event(eventId: str, eventTimestamp: str) -> bool:
+    """
+    Checks if event is valid
+    :param eventId:
+    :param eventTimestamp:
+    :return: True if event is valid , false if it is not valid
+    """
     return eventId != "" and eventTimestamp != ""
 
 
 def identify_event(eventType: str, parentEventId: str) -> str:
+    """
+    Identifies type of event. It can be serving event, user event or unparsable event
+    :param eventType:
+    :param parentEventId:
+    :return: type of event
+    """
     if eventType == "" and parentEventId == "":
         return "serving_event"
     if (eventType == "impression" or eventType == "click") and parentEventId != "":
@@ -20,6 +32,10 @@ def identify_event(eventType: str, parentEventId: str) -> str:
 
 @app.route('/event_collector', methods=['GET'])
 def parse_request():
+    """
+    This is REST API end point which saves valid events in separate csv files depending on their type
+    :return: message regarding outcome
+    """
     # 1  retrieve data
 
     eventId = request.args.get("eventId", default="")
