@@ -117,6 +117,23 @@ And retrieve resulting csv file with:
 `docker cp <NAME>:/output/validated_events.csv .`
 
 
+# TESTS
+
+Tests are located in **tests** folder. Through github actions with every push to branch both unity and integration tests will be run. 
+
+| Module  | statements   | missing |    excluded | coverage  |
+|---|---------------------|----------|-----|---|
+| event_validation.py  | 25                  | 2        | 0   |  92% |
+| event_collector_server.py  | 34                  | 6        | 0   | 82%  |
+|  Total | 59                  | 8        | 0   |  86% |
+
+Tests can be run by invoking:
+
+`make test`
+
+This will generate a codecov file from which it is possible to generate (coverage html) html file.
+
+
 
 
 
