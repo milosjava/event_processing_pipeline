@@ -1,0 +1,27 @@
+name: Continuous Integration
+on:
+  push:
+    paths:
+      - '**'
+      - '.github/**/*.yml'
+    branches:
+      - main
+  pull_request:
+jobs:
+  test:
+    name: "Tests"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v2
+        with:
+          python-version: '3.10'
+
+      - name: Install Poetry
+        uses: snok/install-poetry@v1
+      - name: Check pyproject.toml validity
+        run: poetry check --no-interaction
+      - name: Install Dependencies using Poetry
+        run: poetry install
+      - name: Run Tests w. coverage, Unity and Integration
+        run:  make test
