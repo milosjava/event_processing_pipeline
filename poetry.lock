@@ -49,7 +49,7 @@ toml = ["tomli"]
 
 [[package]]
 name = "faker"
-version = "13.3.1"
+version = "13.3.3"
 description = "Faker is a Python package that generates fake data for you."
 category = "dev"
 optional = false
@@ -221,7 +221,7 @@ watchdog = ["watchdog"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "bc739c6b585a228d23fee3a29a705c6288e3b7d257d980a1e21fa312c7ffafe9"
+content-hash = "e5a870853969bc9790a9fd8391d7ea3e58432f1f0264ae2be8aff409e1b8cb6f"
 
 [metadata.files]
 certifi = [
@@ -284,8 +284,8 @@ coverage = [
     {file = "coverage-6.3.2.tar.gz", hash = "sha256:03e2a7826086b91ef345ff18742ee9fc47a6839ccd517061ef8fa1976e652ce9"},
 ]
 faker = [
-    {file = "Faker-13.3.1-py3-none-any.whl", hash = "sha256:c88c8b5ee9376a242deca8fe829f9a3215ffa43c31da6f66d9594531fb344453"},
-    {file = "Faker-13.3.1.tar.gz", hash = "sha256:fa060e331ffffb57cfa4c07f95d54911e339984ed72596ba6a9e7b6fa569d799"},
+    {file = "Faker-13.3.3-py3-none-any.whl", hash = "sha256:85ed0cb379e3b7414bdb6b484994beaf9bddc74472c8c35f743c16cf5fc0c314"},
+    {file = "Faker-13.3.3.tar.gz", hash = "sha256:5536ceb63380f0d598c026b7c330c17d719a19d1a495e9397ee8f5259420a696"},
 ]
 flask = [
     {file = "Flask-2.0.3-py3-none-any.whl", hash = "sha256:59da8a3170004800a2837844bfa84d49b022550616070f7cb1a659682b2e7c9f"},
@@ -353,6 +353,7 @@ numpy = [
     {file = "numpy-1.22.3-cp310-cp310-macosx_11_0_arm64.whl", hash = "sha256:8251ed96f38b47b4295b1ae51631de7ffa8260b5b087808ef09a39a9d66c97ab"},
     {file = "numpy-1.22.3-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:48a3aecd3b997bf452a2dedb11f4e79bc5bfd21a1d4cc760e703c31d57c84b3e"},
     {file = "numpy-1.22.3-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:a3bae1a2ed00e90b3ba5f7bd0a7c7999b55d609e0c54ceb2b076a25e345fa9f4"},
+    {file = "numpy-1.22.3-cp310-cp310-win32.whl", hash = "sha256:f950f8845b480cffe522913d35567e29dd381b0dc7e4ce6a4a9f9156417d2430"},
     {file = "numpy-1.22.3-cp310-cp310-win_amd64.whl", hash = "sha256:08d9b008d0156c70dc392bb3ab3abb6e7a711383c3247b410b39962263576cd4"},
     {file = "numpy-1.22.3-cp38-cp38-macosx_10_14_x86_64.whl", hash = "sha256:201b4d0552831f7250a08d3b38de0d989d6f6e4658b709a02a73c524ccc6ffce"},
     {file = "numpy-1.22.3-cp38-cp38-macosx_11_0_arm64.whl", hash = "sha256:f8c1f39caad2c896bc0018f699882b345b2a63708008be29b1f355ebf6f933fe"},
