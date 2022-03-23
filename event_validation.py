@@ -37,17 +37,24 @@ def validate(serving_events_filepath: str = "output/serving_events.csv",
 
     #   b. userId in both event types are equal
     #   lets merge these two
-    combined_df = ue_df.merge(se_df, left_on=["userId", "parentEventId"], right_on=["userId", "eventId"],
-                              suffixes=('_ue', '_se'))
+    combined_df = ue_df.merge(
+        se_df, left_on=[
+            "userId", "parentEventId"], right_on=[
+            "userId", "eventId"], suffixes=(
+                '_ue', '_se'))
 
-    #   c. eventTimestamp in server events occur before event timestamp of user event
+    # c. eventTimestamp in server events occur before event timestamp of user
+    # event
 
     # first convert eventTimestamps to time delta so we can compare
-    combined_df["eventTimestamp_ue"] = pd.to_timedelta(combined_df.eventTimestamp_ue + ':00')
-    combined_df["eventTimestamp_se"] = pd.to_timedelta(combined_df.eventTimestamp_se + ':00')
+    combined_df["eventTimestamp_ue"] = pd.to_timedelta(
+        combined_df.eventTimestamp_ue + ':00')
+    combined_df["eventTimestamp_se"] = pd.to_timedelta(
+        combined_df.eventTimestamp_se + ':00')
 
     # make sure that server event was before user event
-    combined_df = combined_df[combined_df["eventTimestamp_se"] < combined_df["eventTimestamp_ue"]]
+    combined_df = combined_df[combined_df["eventTimestamp_se"]
+                              < combined_df["eventTimestamp_ue"]]
 
     #   d. Dedupe for parentEventId and the event type. That is, the output shouldn’t
     #       contain multiple events with the same parentEventId and eventType.
@@ -55,10 +62,12 @@ def validate(serving_events_filepath: str = "output/serving_events.csv",
 
     combined_df.sort_values(by="eventTimestamp_ue", inplace=True)
 
-    combined_df = combined_df.drop_duplicates(subset=["parentEventId_ue", 'eventType_ue'], keep='first')
+    combined_df = combined_df.drop_duplicates(
+        subset=["parentEventId_ue", 'eventType_ue'], keep='first')
 
     # convert back to HH:MM format as in assignment example
-    combined_df.eventTimestamp_ue = combined_df.eventTimestamp_ue.map(_time_delta_to_HH_MM)
+    combined_df.eventTimestamp_ue = combined_df.eventTimestamp_ue.map(
+        _time_delta_to_HH_MM)
 
     # Enrich the valid user event, augmenting with the advertiserId and price fields from the
     # matching server event.
@@ -67,8 +76,15 @@ def validate(serving_events_filepath: str = "output/serving_events.csv",
          "deviceId_ue", "price_se"]]
 
     # fix the column names
-    combined_df.columns = ["eventId", "eventTimestamp", "eventType", "parentEventId", "userId", "advertiserId",
-                           "deviceId", "price"]
+    combined_df.columns = [
+        "eventId",
+        "eventTimestamp",
+        "eventType",
+        "parentEventId",
+        "userId",
+        "advertiserId",
+        "deviceId",
+        "price"]
 
     return combined_df
 

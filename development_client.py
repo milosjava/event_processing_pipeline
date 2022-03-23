@@ -9,9 +9,9 @@ def send_event(eventId: str, eventTimestamp: str, eventType: str,
     # api-endpoint
     URL = "http://127.0.0.1:5000/event_collector?eventId={}&eventTimestamp={}&eventType={}&parentEventId={}&userId={" \
           "}&advertiserId={}&deviceId={}&price={}".format(
-        eventId, eventTimestamp, eventType,
-        parentEventId, userId, advertiserId,
-        deviceId, price)
+              eventId, eventTimestamp, eventType,
+              parentEventId, userId, advertiserId,
+              deviceId, price)
 
     r = requests.get(url=URL)
 
@@ -31,22 +31,39 @@ if __name__ == '__main__':
                      ["event2", "10:01", "", "", "user2", "adv2", "deviceId2", "12"]]
 
     user_events = [["event3", "10:05", "impression", "event1", "user1", "adv1", "deviceId1", "10"],  # real event
-                   ["event4", "10:08", "impression", "event1", "user1", "adv1", "deviceId1", "10"],
+                   ["event4", "10:08", "impression", "event1",
+                       "user1", "adv1", "deviceId1", "10"],
                    # event, duplicate / late
-                   ["event5", "9:00", "click", "event1", "user1", "adv1", "deviceId1", "10"],  # fake event
-                   ["event6", "10:30", "click", "event1", "user1", "adv1", "deviceId1", "10"],  # real event
+                   ["event5", "9:00", "click", "event1", "user1",
+                       "adv1", "deviceId1", "10"],  # fake event
+                   ["event6", "10:30", "click", "event1", "user1",
+                       "adv1", "deviceId1", "10"],  # real event
                    ["event7", "10:05", "impression", "event1", "user2", "adv1", "deviceId1",
                     "10"]]  # //fake user, user 2 doesn’t have event1
 
-    df_server_events = pd.DataFrame(server_events,
-                                    columns=["eventId", "eventTimestamp", "eventType", "parentEventId", "userId",
-                                             "advertiserId",
-                                             "deviceId", "price"])
+    df_server_events = pd.DataFrame(
+        server_events,
+        columns=[
+            "eventId",
+            "eventTimestamp",
+            "eventType",
+            "parentEventId",
+            "userId",
+            "advertiserId",
+            "deviceId",
+            "price"])
 
-    df_user_events = pd.DataFrame(user_events,
-                                  columns=["eventId", "eventTimestamp", "eventType", "parentEventId", "userId",
-                                           "advertiserId",
-                                           "deviceId", "price"])
+    df_user_events = pd.DataFrame(
+        user_events,
+        columns=[
+            "eventId",
+            "eventTimestamp",
+            "eventType",
+            "parentEventId",
+            "userId",
+            "advertiserId",
+            "deviceId",
+            "price"])
 
     df = pd.concat([df_server_events, df_user_events])
 
