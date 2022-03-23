@@ -25,7 +25,8 @@ def identify_event(eventType: str, parentEventId: str) -> str:
     """
     if eventType == "" and parentEventId == "":
         return "serving_event"
-    if (eventType == "impression" or eventType == "click") and parentEventId != "":
+    if (eventType == "impression" or eventType ==
+            "click") and parentEventId != "":
         return "user_event"
     return "unparsable_event"
 

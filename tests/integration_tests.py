@@ -32,6 +32,13 @@ class ServerIntegrationTest(BaseTestCase):
 
         response = self.client.get(
             "/event_collector?eventId={}&eventTimestamp={}&eventType={}&parentEventId={}&userId={}&advertiserId={}&deviceId={}&price={}".format(
-                eventId, eventTimestamp, eventType, parentEventId, userId, advertiserId, deviceId, price))
+                eventId,
+                eventTimestamp,
+                eventType,
+                parentEventId,
+                userId,
+                advertiserId,
+                deviceId,
+                price))
 
         self.assertTrue("unparsable event" in str(response.data))

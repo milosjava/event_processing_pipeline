@@ -8,7 +8,9 @@ class TestEventValidation(TestCase):
 
     def test_validate(self):
         # call validate with test files as given in task
-        df = validate("tests/files/serving_events_test.csv", "tests/files/user_events_test.csv")
+        df = validate(
+            "tests/files/serving_events_test.csv",
+            "tests/files/user_events_test.csv")
 
         # load expected output as given in task
         result = pd.read_csv("tests/files/validated_events_test.csv")
@@ -20,7 +22,11 @@ class TestEventValidation(TestCase):
         self.assertEqual(str(result.columns.values), str(df.columns.values))
 
         # data frames are identical, just make sure that indices are reset
-        self.assertTrue(df.reset_index(drop=True).equals(result.reset_index(drop=True)))
+        self.assertTrue(
+            df.reset_index(
+                drop=True).equals(
+                result.reset_index(
+                    drop=True)))
 
     def test__time_delta_to_hh_mm(self):
         td = timedelta(days=0, hours=10, minutes=20)
