@@ -49,7 +49,7 @@ toml = ["tomli"]
 
 [[package]]
 name = "faker"
-version = "13.12.0"
+version = "13.12.1"
 description = "Faker is a Python package that generates fake data for you."
 category = "dev"
 optional = false
@@ -221,7 +221,7 @@ watchdog = ["watchdog"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "dbe433a151245e0be9381a665979623308a35b83a4cee66e4a0152a0b6243760"
+content-hash = "177c55176edbc7e98f20ac316a37f2c5321418dff4a0a66422128b19c589b915"
 
 [metadata.files]
 certifi = [
@@ -284,8 +284,8 @@ coverage = [
     {file = "coverage-6.4.1.tar.gz", hash = "sha256:4321f075095a096e70aff1d002030ee612b65a205a0a0f5b815280d5dc58100c"},
 ]
 faker = [
-    {file = "Faker-13.12.0-py3-none-any.whl", hash = "sha256:5cbb89fc6a16793b2bd98252c03a86098c7426beab0a20382709a815651b8804"},
-    {file = "Faker-13.12.0.tar.gz", hash = "sha256:1f6478011ac8a8273e0f9cd6da03d9ea6391c622db340eca015339512e9cde29"},
+    {file = "Faker-13.12.1-py3-none-any.whl", hash = "sha256:0122b75e7960cbb1e2bbbf10ef9b8c183377878e38466854953539c6d822e7c0"},
+    {file = "Faker-13.12.1.tar.gz", hash = "sha256:fb95f956bac59c90f54543919d5c5ef41625e12a0773e5aa08c9b9c62ba58fb3"},
 ]
 flask = [
     {file = "Flask-2.1.2-py3-none-any.whl", hash = "sha256:fad5b446feb0d6db6aec0c3184d16a8c1f6c3e464b511649c8918a9be100b4fe"},
