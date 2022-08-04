@@ -6,7 +6,7 @@ authors = ["Milos Grubjesic <milos.g@toptal.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.10"
-Flask = "^2.2.0"
+Flask = "^2.2.1"
 pandas = "^1.4.3"
 
 [tool.poetry.dev-dependencies]
