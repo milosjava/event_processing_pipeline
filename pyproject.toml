@@ -7,7 +7,7 @@ authors = ["Milos Grubjesic <milos.g@toptal.com>"]
 [tool.poetry.dependencies]
 python = "^3.10"
 Flask = "^2.2.2"
-pandas = "^1.5.1"
+pandas = "^1.5.2"
 
 [tool.poetry.dev-dependencies]
 requests = "^2.28.1"
