@@ -5,7 +5,7 @@ description = "A Take-Home Programming Exercise"
 authors = ["Milos Grubjesic <milos.g@toptal.com>"]
 
 [tool.poetry.dependencies]
-python = "^3.10"
+python = ">=3.8, <3.11"
 Flask = "^2.2.2"
 pandas = "^1.5.3"
 
