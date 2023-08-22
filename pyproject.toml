@@ -6,13 +6,13 @@ authors = ["Milos Grubjesic <milos.g@toptal.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.10"
-Flask = "^2.3.2"
-pandas = "^2.0.1"
+Flask = "^2.3.3"
+pandas = "^2.0.3"
 
 [tool.poetry.dev-dependencies]
-requests = "^2.30.0"
-coverage = "^7.2"
-Faker = "^18.9.0"
+requests = "^2.31.0"
+coverage = "^7.3"
+Faker = "^19.3.0"
 Flask-Testing = "^0.8.1"
 
 [build-system]
