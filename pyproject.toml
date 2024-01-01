@@ -12,7 +12,7 @@ pandas = "^2.1.4"
 [tool.poetry.dev-dependencies]
 requests = "^2.31.0"
 coverage = "^7.4"
-Faker = "^21.0.0"
+Faker = "^22.0.0"
 Flask-Testing = "^0.8.1"
 
 [build-system]
