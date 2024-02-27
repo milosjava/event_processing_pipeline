@@ -1,2 +1,2 @@
 # DO NOT EDIT. Add additional dependencies using poetry instead.
-poetry==1.8.0
+poetry==1.8.1
