@@ -10,7 +10,7 @@ Flask = "^3.0.2"
 pandas = "^2.2.2"
 
 [tool.poetry.dev-dependencies]
-requests = "^2.32.2"
+requests = "^2.32.3"
 coverage = "^7.5"
 Faker = "^25.3.0"
 Flask-Testing = "^0.8.1"
