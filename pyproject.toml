@@ -9,7 +9,7 @@ python = "^3.10"
 Flask = "^3.1.1"
 pandas = "^2.3.1"
 
-[tool.poetry.dev-dependencies]
+[tool.poetry.group.dev.dependencies]
 requests = "^2.32.4"
 coverage = "^7.9"
 Faker = "^37.4.2"
