@@ -1,4 +1,4 @@
-FROM python:3.15.0a7-slim as base
+FROM python:3.15.0a8-slim as base
 
 FROM base as poetry
 
